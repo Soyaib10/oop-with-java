@@ -3,20 +3,7 @@
 public class Main {
     public static void main(String[] args) {
         // create and object
-        Human momen = new Human(); // momen is a reference object, meaning creating copy of the Human() class for momen
-        Human dipta = new Human(35);
-
-//        System.out.println(momen.age);
-//        System.out.println(dipta.age);
-//
-//        momen.name = "momen";
-//        momen.age = 21;
-//
-//        dipta.name = "dipta";
-//        dipta.age = 21;
-//
-//        System.out.println(momen.name);
-//        System.out.println(dipta.age);
-//        dipta.eat();
+        Human zihad = new Human("zihad"); // zihad is a reference object, meaning creating copy of the Human() class for mome
+        System.out.println(zihad.name);
     }
 }

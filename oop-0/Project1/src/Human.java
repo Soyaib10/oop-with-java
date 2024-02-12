@@ -9,19 +9,7 @@ public class Human {
         // default constructor
     }
 
-    Human(int x) {
-        age = x;
-    }
-
-
-    // methods
-    void eat() {
-        System.out.println("Eating...");
-    }
-    void sleep() {
-        System.out.println("Sleeping...");
-    }
-    void walk() {
-        System.out.println("Walking...");
+    Human(String name) {
+        this.name = name;
     }
 }
