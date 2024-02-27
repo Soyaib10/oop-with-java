@@ -6,7 +6,7 @@ public class AnonymusObject {
         System.out.println(obj.age);
         obj.f();
 
-        // annonymus object declaration. you can't make any changes to class B() with annonymus function.
+        // anonymus object declaration. you can't make any changes to class B() with annonymus function.
         System.out.println(new B().age);
         new B().f();
     }
