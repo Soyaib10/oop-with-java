@@ -1,0 +1,5 @@
+# blank final variable can be initialized only by constructor
+# blank static final variable can be initialized only by static block
+
+# final class can't be inherited
+# final method can be inherited but can't be overridden

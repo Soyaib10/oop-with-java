@@ -1,4 +1,4 @@
-package Problem1;
+package ClassObjectProblem;
 
 public class Box {
     double height, weight, depth;
