@@ -1,0 +1,17 @@
+# abstract method
+  -> does not have a body
+  -> ends with a semicolon
+  -> must be in the abstract class
+  -> must be overridden
+
+# abstract class
+  -> no object can be created
+  -> reference variable can be made
+  -> can have abstract and non-abstract method
+
+# interface
+  -> by default all variables are "public static final"
+  -> by default all functions are "public abstract"
+  -> multiple inheritance can be possible
+  -> interface can extend other interfaces but a class does 'implements' an interface
+  -> no object can be created
