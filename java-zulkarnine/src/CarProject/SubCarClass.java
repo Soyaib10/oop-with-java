@@ -15,6 +15,12 @@ public class SubCarClass extends CarClass {
         this.chargeInBattery = chargeInBattery;
     }
 
+    public SubCarClass(String manufactureName, String modelName, String carKeyValue, int engineCC, int fuelAmount, int manufactureYear, String colorString, double chargeInBattery) {
+        super(manufactureName, modelName, carKeyValue, engineCC, fuelAmount, manufactureYear);
+        this.colorString = colorString;
+        this.chargeInBattery = chargeInBattery;
+    }
+
     // setter and getter methods
     public String getColorString() {
         return colorString;
@@ -30,5 +36,14 @@ public class SubCarClass extends CarClass {
 
     public void setChargeInBattery(double chargeInBattery) {
         this.chargeInBattery = chargeInBattery;
+    }
+
+    public void printInfo() {
+        super.printInfo();
+        runForSeconds(50);
+        System.out.println("After running the car fuel amount: " + getFuelAmount());
+        System.out.println("Car color: " + getColorString());
+        System.out.println("Charge in battery: " + getChargeInBattery());
+        System.out.println();
     }
 }
