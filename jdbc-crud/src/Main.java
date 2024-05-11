@@ -32,13 +32,31 @@ public class Main {
 //            }
 
             // insert data
-            String insert = String.format("INSERT INTO students(name, age, marks) VALUES('%s', %o, %f)", "Rishan", 23, 110.0);
-            int rowsAffected = statement.executeUpdate(insert);
+//            String insert = String.format("INSERT INTO students(name, age, marks) VALUES('%s', %o, %f)", "Rishan", 23, 110.0);
+//            int rowsAffected = statement.executeUpdate(insert);
+//            if (rowsAffected > 0) {
+//                System.out.println("Data inserted successfully!");
+//            } else {
+//                System.out.println("Data not inserted!");
+//            }
+
+            // update
+//            String update = String.format("UPDATE students SET marks = %f WHERE id = %d", 111.5, 2);
+//            int rowsAffected = statement.executeUpdate(update);
+//            if (rowsAffected > 0) {
+//                System.out.println("Data Updated successfully!");
+//            } else {
+//                System.out.println("Data not Updated!");
+//            }
+
+
+            // delete
+            String delete = String.format("DELETE FROM students WHERE id = %d", 2);
+            int rowsAffected = statement.executeUpdate(delete);
             if (rowsAffected > 0) {
-                System.out.println("Data inserted successfully!");
-            }
-            else {
-                System.out.println("Data not inserted!");
+                System.out.println("Data Deleted successfully!");
+            } else {
+                System.out.println("Data not Deleted!");
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
