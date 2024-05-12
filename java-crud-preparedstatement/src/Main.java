@@ -55,7 +55,16 @@ public class Main {
 //                System.out.println("Data not updated!");
 //            }
 
-
+            // delete
+            String delete = "DELETE FROM students WHERE id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(delete);
+            preparedStatement.setInt(1, 3);
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Data Deleted successfully!");
+            } else {
+                System.out.println("Data not Deleted!");
+            }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
