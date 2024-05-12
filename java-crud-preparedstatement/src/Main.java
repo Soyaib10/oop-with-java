@@ -18,42 +18,42 @@ public class Main {
             Connection connection = DriverManager.getConnection(url, userName, password);
 
             // insert
-//            String insert = "INSERT INTO students(name, age, marks) VALUES(?, ?, ?)";
-//            // Statement statement = connection.createStatement();
-//            PreparedStatement preparedStatement = connection.prepareStatement(insert);
-//            preparedStatement.setString(1, "Zihad");
-//            preparedStatement.setInt(2, 22);
-//            preparedStatement.setDouble(3, 100.0);
-//
-//            int rowsAffected = preparedStatement.executeUpdate();
-//            if (rowsAffected > 0) {
-//                System.out.println("Data inserted Successfully!");
-//            } else {
-//                System.out.println("Data not Inserted!");
-//            }
+            String insert = "INSERT INTO students(name, age, marks) VALUES(?, ?, ?)";
+            // Statement statement = connection.createStatement();
+            PreparedStatement preparedStatement = connection.prepareStatement(insert);
+            preparedStatement.setString(1, "Zihad");
+            preparedStatement.setInt(2, 22);
+            preparedStatement.setDouble(3, 100.0);
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Data inserted Successfully!");
+            } else {
+                System.out.println("Data not Inserted!");
+            }
 
             // display data
-//            String query = "SELECT marks FROM students WHERE id = ?";
-//            PreparedStatement preparedStatement = connection.prepareStatement(query);
-//            preparedStatement.setInt(1, 1);
-//            ResultSet resultSet = preparedStatement.executeQuery();
-//            if (resultSet.next()) {
-//                System.out.println("Marks: " + resultSet.getDouble("marks"));
-//            } else {
-//                System.out.println("Marks not found!");
-//            }
+            String query = "SELECT marks FROM students WHERE id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, 1);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                System.out.println("Marks: " + resultSet.getDouble("marks"));
+            } else {
+                System.out.println("Marks not found!");
+            }
 
             // update
-//            String update = "UPDATE students SET marks = ? WHERE id = ?";
-//            PreparedStatement preparedStatement = connection.prepareStatement(update);
-//            preparedStatement.setDouble(1, 99.99);
-//            preparedStatement.setInt(2, 3);
-//            int rowsAffected = preparedStatement.executeUpdate();
-//            if (rowsAffected > 0) {
-//                System.out.println("Data Updated successfully!");
-//            } else {
-//                System.out.println("Data not updated!");
-//            }
+            String update = "UPDATE students SET marks = ? WHERE id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(update);
+            preparedStatement.setDouble(1, 99.99);
+            preparedStatement.setInt(2, 3);
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Data Updated successfully!");
+            } else {
+                System.out.println("Data not updated!");
+            }
 
             // delete
             String delete = "DELETE FROM students WHERE id = ?";
