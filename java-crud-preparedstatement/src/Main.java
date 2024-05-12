@@ -18,18 +18,29 @@ public class Main {
             Connection connection = DriverManager.getConnection(url, userName, password);
 
             // insert
-            String insert = "INSERT INTO students(name, age, marks) VALUES(?, ?, ?)";
-            // Statement statement = connection.createStatement();
-            PreparedStatement preparedStatement = connection.prepareStatement(insert);
-            preparedStatement.setString(1, "Zihad");
-            preparedStatement.setInt(2, 22);
-            preparedStatement.setDouble(3, 100.0);
+//            String insert = "INSERT INTO students(name, age, marks) VALUES(?, ?, ?)";
+//            // Statement statement = connection.createStatement();
+//            PreparedStatement preparedStatement = connection.prepareStatement(insert);
+//            preparedStatement.setString(1, "Zihad");
+//            preparedStatement.setInt(2, 22);
+//            preparedStatement.setDouble(3, 100.0);
+//
+//            int rowsAffected = preparedStatement.executeUpdate();
+//            if (rowsAffected > 0) {
+//                System.out.println("Data inserted Successfully!");
+//            } else {
+//                System.out.println("Data not Inserted!");
+//            }
 
-            int rowsAffected = preparedStatement.executeUpdate();
-            if (rowsAffected > 0) {
-                System.out.println("Data inserted Successfully!");
+            // display data
+            String query = "SELECT marks FROM students WHERE id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, 1);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                System.out.println("Marks: " + resultSet.getDouble("marks"));
             } else {
-                System.out.println("Data not Inserted!");
+                System.out.println("Marks not found!");
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
