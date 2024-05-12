@@ -33,15 +33,29 @@ public class Main {
 //            }
 
             // display data
-            String query = "SELECT marks FROM students WHERE id = ?";
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setInt(1, 1);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                System.out.println("Marks: " + resultSet.getDouble("marks"));
-            } else {
-                System.out.println("Marks not found!");
-            }
+//            String query = "SELECT marks FROM students WHERE id = ?";
+//            PreparedStatement preparedStatement = connection.prepareStatement(query);
+//            preparedStatement.setInt(1, 1);
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//            if (resultSet.next()) {
+//                System.out.println("Marks: " + resultSet.getDouble("marks"));
+//            } else {
+//                System.out.println("Marks not found!");
+//            }
+
+            // update
+//            String update = "UPDATE students SET marks = ? WHERE id = ?";
+//            PreparedStatement preparedStatement = connection.prepareStatement(update);
+//            preparedStatement.setDouble(1, 99.99);
+//            preparedStatement.setInt(2, 3);
+//            int rowsAffected = preparedStatement.executeUpdate();
+//            if (rowsAffected > 0) {
+//                System.out.println("Data Updated successfully!");
+//            } else {
+//                System.out.println("Data not updated!");
+//            }
+
+
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
