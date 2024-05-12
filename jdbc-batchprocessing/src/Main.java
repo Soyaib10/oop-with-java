@@ -17,10 +17,42 @@ public class Main {
         // database connection
         try {
             Connection connection = DriverManager.getConnection(url, userName, password);
-            Statement statement = connection.createStatement();
-            Scanner scanner = new Scanner(System.in);
+//            Statement statement = connection.createStatement();
+//            Scanner scanner = new Scanner(System.in);
 
             // insert using batch-processing normal way
+//            while (true) {
+//                System.out.print("Enter name: ");
+//                String name = scanner.next();
+//                System.out.print("Enter age: ");
+//                int age = scanner.nextInt();
+//                System.out.print("Enter marks: ");
+//                double marks = scanner.nextDouble();
+//                System.out.print("Enter more data(Y/N)?: ");
+//                String choice = scanner.next();
+//                String insert = String.format("INSERT INTO students(name, age, marks) VALUES('%s', %d, %f)", name, age, marks);
+//                statement.addBatch(insert);
+//                if (choice.equalsIgnoreCase("N")) {
+//                    break;
+//                }
+//            }
+//
+//            int[] a = statement.executeBatch();
+//            boolean flag = false;
+//            for (int i = 0; i < a.length; i++) {
+//                if (a[i] == 0) {
+//                    System.out.println("Query no " + (i + 1) + " not executed successfully");
+//                    flag = true;
+//                }
+//            }
+//            if (!flag) {
+//                System.out.println("Query successful!");
+//            }
+
+            // batch-processing in preparedStatement way
+            String query = "INSERT INTO students(name, age, marks) VALUES(?, ?, ?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            Scanner scanner = new Scanner(System.in);
             while (true) {
                 System.out.print("Enter name: ");
                 String name = scanner.next();
@@ -30,14 +62,17 @@ public class Main {
                 double marks = scanner.nextDouble();
                 System.out.print("Enter more data(Y/N)?: ");
                 String choice = scanner.next();
-                String insert = String.format("INSERT INTO students(name, age, marks) VALUES('%s', %d, %f)", name, age, marks);
-                statement.addBatch(insert);
+
+                preparedStatement.setString(1, name);
+                preparedStatement.setInt(2, age);
+                preparedStatement.setDouble(3, marks);
+                preparedStatement.addBatch();
                 if (choice.equalsIgnoreCase("N")) {
                     break;
                 }
             }
 
-            int[] a = statement.executeBatch();
+            int[] a = preparedStatement.executeBatch();
             boolean flag = false;
             for (int i = 0; i < a.length; i++) {
                 if (a[i] == 0) {
