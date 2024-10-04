@@ -10,7 +10,6 @@ public class CarClass {
 
     int engineCC;
 
-
     protected int manufactureYear;
 
     // constructors
